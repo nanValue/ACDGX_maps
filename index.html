@@ -1,0 +1,680 @@
+<!DOCTYPE HTML>
+<html lang = "zH-Hant">
+
+    <head>
+
+        <meta charset = "UTF-8"/>
+        <meta name = "viewport" content = "width=device-width,initial-scale=1.0">
+
+        <title>𝔸ℂ𝔻𝔾𝕏◈創世曙光</title>
+
+        <script type="application/ld+json">
+        {
+            "@context": "𝔸ℂ𝔻𝔾𝕏◈創世地圖介紹",
+            "@type": "Recipe",
+            "name": "𝔸ℂ𝔻𝔾𝕏◈創世曙光",
+            "image": [ "https://iili.io/FYea4DJ.png" ],
+            "author": {
+                "@type": "Person",
+                "name": "nan value"
+            }
+        }
+        </script>
+
+        <link rel="shortcut icon" href="https://iili.io/FYea4DJ.png" type="image/x-icon"/>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+        <script type="module">
+            import "https://font.emtech.cc/emfont.js";
+            emfont.init();
+        </script>
+
+        <style>
+
+            :root {
+
+                --main-backgorund-color: linear-gradient(310deg, #21e1d733 0%, #39b2755b 33%,rgba(66, 52, 53, 0.376) 66%, #0909626f 100%);
+                --nav-height: 50px;
+                --carousel-width: 30vw;
+
+                overflow: hidden;
+            }
+
+            * {
+
+                margin: 0;
+            }
+
+            body {
+                
+                position: relative;
+                height: 100%;
+                background-color: #222624;
+            }
+
+            nav {
+
+                position: fixed;
+                top: 0;
+
+                height: var(--nav-height);
+                background: var(--main-backgorund-color);
+                box-shadow: gray 0 0 2px 2px;
+                border-bottom: 1px black solid;
+
+                z-index: 5;
+
+                opacity: 1;
+                width: 100dvw;
+
+                box-sizing: border-box;
+
+                &:hover {
+
+                    animation: Show 1s ease-out forwards 1;
+                    animation-timeline: auto;
+                    animation-range: normal;
+                }
+
+                div {
+
+                    display: inline-flex;
+
+                    justify-content: flex-start;
+                    align-items: center;
+
+                    div:first-child {
+
+                        width: calc(60px + 280px);
+
+                        img {
+
+                            flex: 0 0 var(--nav-height);
+                            width: var(--nav-height);
+                            height: var(--nav-height);
+                        }
+
+                        span {
+
+                            font-size: 20px;
+                            color: white;
+                            font-family: 'Roboto', Courier, monospace;
+                            text-shadow: #9ff 0px 0px 10px;
+                        }
+                    }
+                }
+            }
+
+            div.content {
+
+                display: flex;
+                flex-wrap: wrap;
+
+                overflow: hidden scroll;
+                scroll-snap-type: y proximity;
+
+                height: 100dvh;
+
+                box-sizing: border-box;
+
+                & > div.card {
+
+                    scroll-snap-align: center;
+                    scroll-behavior: smooth;
+                }
+
+                &::-webkit-scrollbar-thumb {
+
+                    background: rgb(209, 181, 211);
+                }
+
+                &::-webkit-scrollbar-track {
+
+                    background: rgb(0, 0, 0);
+                }
+
+                &::-webkit-scrollbar {
+
+                    max-width: 8px;
+                    max-height: 8px;
+                }
+            }
+
+            .card {
+
+                position: relative;
+
+                width: 100%;
+                height: 100vh;
+
+                pointer-events: painted;
+
+                transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+                &:focus-within {
+
+                    background-image: linear-gradient(45deg, rgba(255,0,0,0.4), rgb(0,255,0,0.4), rgba(0,0,255,0.4));
+
+                    .text_content {
+
+                        filter: blur(20px);
+                    }
+                }
+
+                .image_back {
+
+                    width: 100%;
+                    height: 100%;
+
+                    filter: blur(20px) grayscale(0) brightness(2) opacity(0);
+                    background-size: cover;
+
+                    animation: Ani_Background ease-in forwards;
+                    animation-range: entry calc(var(--nav-height) * 3);
+                    animation-timeline: view();
+                }
+
+                &:nth-of-type(2n) .Carousel {
+
+                    left: 60px;
+                }
+
+                &:nth-of-type(2n + 1) .Carousel {
+
+                    right: 60px;
+                }
+
+                &:nth-of-type(2n) .Carousel:focus-within, &:nth-of-type(2n) .Carousel:active {
+
+                    left: calc(50vw - calc(var(--carousel-width) / 2));
+                    box-shadow: inset rgb(255, 255, 255) 0 0 20px;
+                    background-color: #304544;
+                }
+
+                &:nth-of-type(2n + 1) .Carousel:focus-within, &:nth-of-type(2n + 1) .Carousel:active {
+
+                    right: calc(50vw - calc(var(--carousel-width) / 2));
+                    box-shadow: inset rgb(255, 255, 255) 0 0 20px;
+                    background-color: #304544;
+                }
+
+                &:nth-of-type(3n + 1) .Carousel {
+
+                    box-shadow: inset rgb(255, 100, 100) 0 0 10px;
+                }
+
+                &:nth-of-type(3n + 2) .Carousel {
+
+                    box-shadow: inset rgb(100, 255, 100) 0 0 10px;
+                }
+
+                &:nth-of-type(3n) .Carousel {
+
+                    box-shadow: inset rgb(100, 100, 255) 0 0 10px;
+                }
+
+                .Carousel {
+
+                    position: absolute;
+
+                    pointer-events: auto;
+
+                    --cut: calc(var(--carousel-width) / 2);
+
+                    top: calc(50vh - var(--cut) + var(--nav-height));
+
+                    width: var(--carousel-width);
+                    height: calc(var(--carousel-width) * 3 / 4);
+
+                    border-radius: 20px 20px 0 0;
+
+                    z-index: 2;
+
+                    transition: all 0.5s ease-in-out;
+
+                    &:focus-within, &:active {
+
+                        scale: 2;
+                        outline: none;
+                    }
+                }
+
+                &:nth-of-type(2n) .text_content {
+
+                    right: 60px;
+
+                    h1, span {text-align: right;}
+                }
+
+                &:nth-of-type(2n + 1) .text_content {
+
+                    left: 60px;
+                }
+
+                .text_content {
+
+                    position: absolute;
+
+                    top: 0;
+
+                    width: 50%;
+                    height: calc(100% - 100px);
+                    margin: 50px 0;
+
+                    h1, a, span, pre {
+
+                        color: white;
+                        text-shadow: rgb(1 71 199) -1px -1px 2px,
+                        rgb(143, 142, 142) 2px 2px 1px,
+                        rgb(99, 99, 99) 3px 3px 1px,
+                        rgb(52, 52, 52) 4px 4px 1px,
+                        black 5px 5px 3px;
+
+                        font-family: 'Roboto', Courier, monospace;
+                        font-weight: 400;
+                    }
+
+                    h1 {
+
+                        font-size: 60px;
+                        font-family: 'MantouSans';
+                    }
+
+                    span, pre {
+
+                        font-size: 24px;
+
+                        white-space: pre-wrap;
+                        /*overflow: hidden;*/
+                        text-overflow: clip;
+                        font-family: 'GenJyuuGothicPX';
+                    }
+                }
+            }
+
+            .flex {
+
+                display: flex;
+
+                justify-content: center;
+                align-items: center;
+            }
+
+            .f_column {
+
+                flex-direction: column;
+            }
+
+            .Carousel {
+
+                text-align: center;
+                align-content: center;
+
+                user-select: none;
+                -moz-user-select: none;
+                -webkit-user-select: none;
+                -o-user-select: none;
+                -ms-user-select: none;
+
+                div.Carousel_cont {
+
+                    display: flex;
+
+                    flex-wrap: wrap;
+                    flex-direction: column;
+
+                    overflow: scroll hidden;
+
+                    width: 100%;
+                    height: 100%;
+
+                    scroll-snap-type: x mandatory;
+
+                    justify-content: center;
+
+                    &::-webkit-scrollbar-thumb {
+
+                        background: rgb(209, 181, 211);
+                    }
+
+                    &::-webkit-scrollbar-track {
+
+                        background: rgb(0, 0, 0);
+                    }
+
+                    &::-webkit-scrollbar {
+
+                        max-width: 20px;
+                        max-height: 20px;
+                    }
+
+                    .cardcell {
+
+                        width: 100%;
+                        height: 100%;
+
+                        scroll-snap-align: center;
+                        scroll-behavior: smooth;
+
+                        color: white;
+
+                        align-content: end;
+                        text-align: left;
+                        font-size: 32px;
+
+                        padding: 20px 20px;
+
+                        box-sizing: border-box;
+                        object-fit: fill;
+                    }
+
+                    nav {
+
+                        scroll-snap-align: unset;
+                        scroll-behavior: unset;
+                    }
+                }
+            }
+
+            @media (max-width: 720px) {
+
+                .card .text_content {
+
+                    h1 {
+
+                        font-size: 30px;
+                    }
+
+                    span, pre {
+
+                        font-size: 16px;
+                    }
+                }
+            }
+
+            @media (max-width: 720px) {
+
+                .card {
+
+                    .text_content:nth-of-type(2n), .text_content {
+
+                        h1, span, pre {
+
+                            text-align: center;
+                        }
+                    }
+
+                    &:nth-of-type(2n) .text_content,  &:nth-of-type(2n + 1) .text_content {
+
+                        width: auto;
+                        right: unset;
+                        left: unset;
+                        margin: calc(var(--nav-height) + 6px) 6px;
+                        overflow: hidden scroll;
+                    }
+
+                    &:nth-of-type(2n) .Carousel {
+
+                        top: calc(70dvh - var(--nav-height));
+                        left: calc(50dvw - calc(var(--carousel-width) / 2));
+                    }
+
+                    &:nth-of-type(2n + 1) .Carousel {
+
+                        top: calc(70dvh - var(--nav-height));
+                        right: calc(50dvw - calc(var(--carousel-width) / 2));
+                    }
+
+                    .Carousel {
+
+                        --carousel-width: 60dvw;
+                        width: var(--carousel-width);
+                        height: calc(var(--carousel-width) * 3 / 4);
+
+                        &:focus-within, &:active {
+
+                            scale: 1.5;
+                            top: calc(50dvh - var(--nav-height) - calc(var(--carousel-width) * 3 / 8));
+                        }
+                    }
+                }
+            }
+
+            @keyframes Ani_Background {
+
+                0% {
+
+                    filter: blur(20px) grayscale(0) brightness(2) opacity(0) contrast(1);
+                }          
+
+                50% {
+
+                    filter: blur(5px) grayscale(0.7) brightness(1) opacity(1) contrast(0.6);/*filter: blur(0) grayscale(0) brightness(1) opacity(0.8) contrast(1);*/
+                }   
+
+                100% {
+
+                    filter: blur(0) grayscale(0) brightness(0.05) opacity(0.8) contrast(1);/*filter: blur(5px) grayscale(0.7) brightness(0.3) opacity(1) contrast(0.6);*/
+                }
+            }
+
+            @keyframes Show {
+
+                0% {
+
+                    opacity: 1;
+                    filter: blur(0) brightness(1);
+                }
+
+                50% {
+
+                    opacity: 1;
+                    filter: blur(5px) brightness(2);
+                }                
+                
+                100% {
+
+                    opacity: 1;
+                    filter: blur(0) brightness(1);
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <div class = "content">
+
+            <nav>
+                <div>
+                    <div><img src="https://iili.io/FYeMvLu.png" style = "animation: Rotate 12s ease-in-out infinite;"> <span> ACDGX創世曙光-團隊地圖 </span></div>
+                </div>
+            </nav>
+
+            <div class = "card">
+
+                <div class = "image_back" style = "background-image: url('https://iili.io/FhZkyrP.jpg');"></div>
+
+                <div class = "Carousel"> 
+                    <div class = "Carousel_cont">
+                        <img class = "image_main cardcell" src = "https://iili.io/FhZvBBp.jpg" style = "height: calc(var(--carousel-width) * 3 / 5);"/>
+                        <img class = "image_main cardcell" src = "https://iili.io/FhZkmBV.jpg" style = "height: calc(var(--carousel-width) * 3 / 5);"/>
+                        <img class = "image_main cardcell" src = "https://iili.io/FhZkDLQ.jpg" style = "height: calc(var(--carousel-width) * 3 / 5);"/>
+                    </div> 
+                </div>
+
+                <div class = "text_content">
+
+                    <h1> 【[重製版]技能成長】Skill Grow | Lua </h1>
+<pre>
+
+    作者：DestroyerI滅世I（守創者）
+
+    難度：[簡單] = [困難] ( 遊戲BUG ) 11回合 / [普通] 9回合 / [極限] 13回合 / [地獄] 9回合瘋狂版
+
+    介紹：競技型地圖，參考 Ain神的規律q 所製作的 技能成長 並加以改良，遊戲開始時會先進入60秒的地圖投票階段，玩家將投票選出 Counter-Strike 2 的 Dust2 炙熱沙城II、Italy 義大利、Inferno 煉獄小鎮 其中一張作為本局要遊玩的地圖，每回合開始可以獲得金幣購買技能並疊加，擊殺敵人也可以獲取金幣繼續疊加技能，善用各種技能組合打出最亮眼的成績。在瘋狂版中，玩家將獲得兩倍金幣，同時武器數值也會變得很誇張。
+</pre>
+                </div>
+            </div>
+
+            <div class = "card">
+
+                <div class = "image_back" style = "background-image: url('https://iili.io/Fh9zN7R.jpg');"></div>
+
+                <div class = "Carousel"> 
+                    <div class = "Carousel_cont"> 
+                        <img class = "image_main cardcell" src = "https://iili.io/Fh9zOep.jpg" style = "height: calc(var(--carousel-width) * 3 / 5);"/>
+                        <img class = "image_main cardcell" src = "https://iili.io/Fh9zemN.jpg" style = "height: calc(var(--carousel-width) * 3 / 5);"/>
+                    </div> 
+                </div>
+
+                <div class = "text_content">
+
+                    <h1> 新年鎮 </h1>
+<pre>
+
+    作者：緋櫻潯（守創者成員）
+
+    地圖簡介：以新年、蛇年、神社為主題元素製成以及些許的小彩蛋
+</pre>
+                </div>
+            </div>
+
+            <div class = "card">
+
+                <div class = "image_back" style = "background-image: url('https://iili.io/FMZYY2R.jpg');"></div>
+
+                <div class = "Carousel"> 
+                    <div class = "Carousel_cont"> 
+                        <img class = "image_main cardcell" src = "https://iili.io/FMTqqYu.jpg" style = "height: calc(var(--carousel-width) * 3 / 5);"/>
+                    </div> 
+                </div>
+
+                <div class = "text_content">
+
+                    <h1> 魔幻菇菇博物館 </h1>
+<pre>
+
+    CSO online RPG練等地圖：
+
+    -來自深淵島上最珍貴的物種"魔幻菇菇"帶來無盡的能量與財富，而你收到洛恩·克雷的邀約想獲取豐厚的報酬。
+
+    動態操作、舒適簡約的UI畫面，與腦動大開的冒險旅程，等你體驗！
+
+    CSO Studio搜尋：魔幻菇菇博物館
+
+    獲取詳細資訊：Discord社群連結 > <a href="https://discord.com/invite/vaztCHwMWw" target="_blank">https://discord.com/invite/vaztCHwMWw</a>
+</pre>
+                </div>
+            </div>
+
+            <div class = "card">
+
+                <div class = "image_back" style = "background-image: url('https://iili.io/FMZDbkX.jpg');"></div>
+
+                <div class = "Carousel"> 
+                    <div class = "Carousel_cont"> 
+                        <img class = "image_main cardcell" src = "https://iili.io/FMZX55g.jpg" style = "height: calc(var(--carousel-width) * 3 / 5);"/>
+                    </div> 
+                </div>
+
+                <div class = "text_content">
+
+                    <h1> 送客系列 </h1>
+<pre> 
+
+    娛樂派對地圖
+
+    -把使用槍枝把所有玩家推飛出去吧，尚Kㄟ(台語)！ 
+
+    目前有3代，其中1代為死鬥(限定武器)，2代為回合制，3代為死鬥(隨機武器)，
+
+    CSO Studio搜尋：送客
+</pre>
+                </div>
+            </div>
+        </div>
+
+        <script>
+
+            let root = document.documentElement;
+            let i = 0;
+
+            document.querySelectorAll(".Carousel").forEach((element) => {
+
+                i += 1;
+
+                element.setAttribute("tabindex", i.toString());
+                /*element.setAttribute("hidefocus", true);
+                element.setAttribute("style", "outline: none;");*/
+            });
+
+            document.querySelectorAll("h1").forEach((element) => {
+
+                element.classList.add("emfont-MantouSans");
+            });
+
+            document.querySelectorAll("pre, span").forEach((element) => {
+
+                element.classList.add("emfont-GenJyuuGothicPX");
+            });
+
+            document.querySelectorAll(".Carousel_cont").forEach((element) => {
+
+                let target = null;
+
+                element.addEventListener("mousedown", (e) => {
+
+                    if (element.children.length === 1) {return;}
+
+                    this.cs = 0;
+
+                    this.ismousedown = true;
+
+                    this.crpos = {bar_left: element.scrollLeft, x: e.clientX}
+                    
+                    target = e.target;
+                    element.style.scrollSnapType = "none";
+                    target.parentNode.focus();
+
+                    //root.style.pointerEvents = "auto";
+
+                    e.preventDefault();
+                    e.stopPropagation();
+                }, false);
+
+                root.addEventListener("mouseup", (e) => {
+ 
+                    if (element.children.length === 1) {return;}
+
+                    this.ismousedown = false;
+                    element.style.scrollSnapType = "x mandatory";
+                    target = null;
+                    //root.style.pointerEvents = "none";
+
+                    e.preventDefault();
+                    e.stopPropagation();
+                }, false);
+
+                element.addEventListener("mousemove", (e) => {
+                    
+                    let ci = 0.05;
+
+                    if (this.ismousedown === true) {
+
+                        ci = (this.cs++ <= 10) ? 0.4 : 0.05;
+
+                        element.scrollLeft -= (e.clientX - this.crpos.x)*ci;
+                        this.isc = true;
+                    }
+
+                    e.preventDefault();
+                    e.stopPropagation();
+                }, false);
+            });
+        </script>
+    </body>
+</html>
