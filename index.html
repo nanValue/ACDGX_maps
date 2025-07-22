@@ -291,10 +291,14 @@
 
                         font-size: 24px;
 
+                        max-height: calc(100% - 100px - 72px - 40px);
+
+                        overflow: hidden auto;
+
                         white-space: pre-wrap;
-                        /*overflow: hidden;*/
+
                         text-overflow: clip;
-                        font-family: 'Poppins', 'GenJyuuGothicPX';
+                        font-family: 'Roboto'; /*, 'Poppins', 'GenJyuuGothicPX'*/
                     }
                 }
             }
@@ -395,6 +399,7 @@
                     span, pre {
 
                         font-size: 16px;
+                        max-height: calc(100dvh - 460px);
                     }
                 }
             }
