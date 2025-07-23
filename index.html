@@ -21,6 +21,8 @@
             }
         }
         </script>
+        
+        <script src="https://cdn.staticfile.net/jquery/1.10.2/jquery.min.js"></script>
 
         <link rel="shortcut icon" href="https://iili.io/FYea4DJ.png" type="image/x-icon"/>
 
@@ -142,8 +144,8 @@
 
                 &::-webkit-scrollbar {
 
-                    max-width: 8px;
-                    max-height: 8px;
+                    max-width: 20px;
+                    max-height: 20px;
                 }
             }
 
@@ -184,11 +186,13 @@
                 &:nth-of-type(2n) .Carousel {
 
                     left: 60px;
+                    opacity: 0;
                 }
 
                 &:nth-of-type(2n + 1) .Carousel {
 
                     right: 60px;
+                    opacity: 0;
                 }
 
                 &:nth-of-type(2n) .Carousel:focus-within, &:nth-of-type(2n) .Carousel:active {
@@ -687,6 +691,38 @@
                     e.stopPropagation();
                 }, false);
             });
+
+            let Carousel_animation_finish  = [];
+
+            $(document).ready(function(){
+
+                $(".content").scroll(function() {
+                    
+                    let E = null;
+                    let totalH = -$('.card')[0].getClientRects()[0].height*0.5;
+                    
+                    $.each($('.card').toArray(), function(i, E) {
+                        console.log(totalH + "/" + $('.content').scrollTop() + "|");
+
+                        if (Carousel_animation_finish[i]) {
+
+
+                        } else {
+
+                            if (totalH < $('.content').scrollTop()) {
+
+                                Carousel_animation_finish[i] = true;
+                                $(E).children(".Carousel").css({ "opacity": "1"});
+                            }
+                        }
+
+                        totalH += E.getClientRects()[0].height; 
+                    });
+                });
+
+                $($(".card")[0]).children(".Carousel").css({ "opacity": "1"});
+            });
+            /*left: 60px;*/
         </script>
     </body>
 </html>
