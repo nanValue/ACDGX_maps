@@ -186,12 +186,25 @@
                 &:nth-of-type(2n) .Carousel {
 
                     left: 60px;
-                    opacity: 0;
+                    opacity: 1;
                 }
 
                 &:nth-of-type(2n + 1) .Carousel {
 
                     right: 60px;
+                    opacity: 1;
+                }
+
+
+                &:nth-of-type(2n) .Carousel.Out {
+
+                    left: -60px;
+                    opacity: 0;
+                }
+
+                &:nth-of-type(2n + 1) .Carousel.Out {
+
+                    right: -60px;
                     opacity: 0;
                 }
 
@@ -461,17 +474,17 @@
 
                 0% {
 
-                    filter: blur(20px) grayscale(0) brightness(2) opacity(0) contrast(1);
+                    filter: blur(20px) grayscale(0) brightness(2) opacity(0);
                 }          
 
                 50% {
 
-                    filter: blur(5px) grayscale(0.7) brightness(1) opacity(1) contrast(0.6);/*filter: blur(0) grayscale(0) brightness(1) opacity(0.8) contrast(1);*/
+                    filter: blur(0) grayscale(0) brightness(1) opacity(1);/*filter: blur(0) grayscale(0) brightness(1) opacity(0.8) contrast(1);*/
                 }   
 
                 100% {
 
-                    filter: blur(0) grayscale(0) brightness(0.05) opacity(0.8) contrast(1);/*filter: blur(5px) grayscale(0.7) brightness(0.3) opacity(1) contrast(0.6);*/
+                    filter: blur(0) grayscale(0) brightness(0) opacity(0.8);/*filter: blur(5px) grayscale(0.7) brightness(0.3) opacity(1) contrast(0.6);*/
                 }
             }
 
@@ -510,9 +523,41 @@
 
             <div class = "card">
 
+                <div class = "image_back" style = "background-image: url('https://iili.io/FeOefjf.jpg');"></div>
+
+                <div class = "Carousel Out"> 
+                    <div class = "Carousel_cont">
+                        <img class = "image_main cardcell" src = "https://iili.io/FeOefjf.jpg" style = "height: calc(var(--carousel-width) * 4 / 5);"/>
+                        <img class = "image_main cardcell" src = "https://iili.io/FeOWo5x.jpg" style = "height: calc(var(--carousel-width) * 4 / 5);"/>
+                        <img class = "image_main cardcell" src = "https://iili.io/FeOWnJj.jpg" style = "height: calc(var(--carousel-width) * 4 / 5);"/>
+                        <img class = "image_main cardcell" src = "https://iili.io/FeOW3W7.jpg" style = "height: calc(var(--carousel-width) * 4 / 5);"/>
+                        <img class = "image_main cardcell" src = "https://iili.io/FeOWxOQ.jpg" style = "height: calc(var(--carousel-width) * 4 / 5);"/>
+                        <img class = "image_main cardcell" src = "https://iili.io/FeOWTzB.jpg" style = "height: calc(var(--carousel-width) * 4 / 5);"/>
+                        <img class = "image_main cardcell" src = "https://iili.io/FeOWAs1.jpg" style = "height: calc(var(--carousel-width) * 4 / 5);"/>
+                        <img class = "image_main cardcell" src = "https://iili.io/FeOW70g.jpg" style = "height: calc(var(--carousel-width) * 4 / 5);"/>
+                        <img class = "image_main cardcell" src = "https://iili.io/FeOWcdJ.jpg" style = "height: calc(var(--carousel-width) * 4 / 5);"/>
+                        <img class = "image_main cardcell" src = "https://iili.io/FeOWl5v.jpg" style = "height: calc(var(--carousel-width) * 4 / 5);"/>
+                    </div>
+                </div>
+
+                <div class = "text_content">
+
+                    <h1> 戀愛物語 一 下雪後的約定 </h1>
+<pre>
+
+    作者：卍一零之使魔一卍
+
+    介紹內容大綱：
+    女主角[夏雪]，在學校上課中，那時有一位新的轉學生，男主角［李哲宇］，他在人生中發生很多痛苦、難過的事情，然而因為有了夏雪的支助下，讓他產生一股動力，並朝向正面的心態走下去，某天男主內心壓力太大想不開時，因為女主［夏雪］給他些支柱下，使男主心情穩定，男主對女主說，他的心願是想做出兩部動畫電影，目地是為了想達謝某些重要的恩人，因為女主叫［夏雪］，所以男主說自己成功做出動畫電影的話，想在那些年”下雪”時上映，正當男主和女主揮手道別後，此時男主在路途中不幸發生意外.....
+</pre>
+                </div>
+            </div>
+
+            <div class = "card">
+
                 <div class = "image_back" style = "background-image: url('https://iili.io/FhZkyrP.jpg');"></div>
 
-                <div class = "Carousel"> 
+                <div class = "Carousel Out"> 
                     <div class = "Carousel_cont">
                         <img class = "image_main cardcell" src = "https://iili.io/FhZvBBp.jpg" style = "height: calc(var(--carousel-width) * 3 / 5);"/>
                         <img class = "image_main cardcell" src = "https://iili.io/FhZkmBV.jpg" style = "height: calc(var(--carousel-width) * 3 / 5);"/>
@@ -538,7 +583,7 @@
 
                 <div class = "image_back" style = "background-image: url('https://iili.io/Fh9zN7R.jpg');"></div>
 
-                <div class = "Carousel"> 
+                <div class = "Carousel Out"> 
                     <div class = "Carousel_cont"> 
                         <img class = "image_main cardcell" src = "https://iili.io/Fh9zOep.jpg" style = "height: calc(var(--carousel-width) * 3 / 5);"/>
                         <img class = "image_main cardcell" src = "https://iili.io/Fh9zemN.jpg" style = "height: calc(var(--carousel-width) * 3 / 5);"/>
@@ -561,7 +606,7 @@
 
                 <div class = "image_back" style = "background-image: url('https://iili.io/FMZYY2R.jpg');"></div>
 
-                <div class = "Carousel"> 
+                <div class = "Carousel Out"> 
                     <div class = "Carousel_cont"> 
                         <img class = "image_main cardcell" src = "https://iili.io/FMTqqYu.jpg" style = "height: calc(var(--carousel-width) * 3 / 5);"/>
 						<img class = "image_main cardcell" src = "https://iili.io/Fjrc9Du.jpg" style = "height: calc(var(--carousel-width) * 4 / 5);"/>
@@ -591,7 +636,7 @@
 
                 <div class = "image_back" style = "background-image: url('https://iili.io/FMZDbkX.jpg');"></div>
 
-                <div class = "Carousel"> 
+                <div class = "Carousel Out"> 
                     <div class = "Carousel_cont"> 
                         <img class = "image_main cardcell" src = "https://iili.io/FMZX55g.jpg" style = "height: calc(var(--carousel-width) * 3 / 5);"/>
                     </div> 
@@ -692,7 +737,7 @@
                 }, false);
             });
 
-            let Carousel_animation_finish  = [];
+            let Carousel_animation_finish  = [true];
 
             $(document).ready(function(){
 
@@ -702,17 +747,16 @@
                     let totalH = -$('.card')[0].getClientRects()[0].height*0.5;
                     
                     $.each($('.card').toArray(), function(i, E) {
-                        console.log(totalH + "/" + $('.content').scrollTop() + "|");
 
                         if (Carousel_animation_finish[i]) {
-
 
                         } else {
 
                             if (totalH < $('.content').scrollTop()) {
 
                                 Carousel_animation_finish[i] = true;
-                                $(E).children(".Carousel").css({ "opacity": "1"});
+
+                                $(E).children(".Carousel").removeClass("Out");
                             }
                         }
 
@@ -720,7 +764,7 @@
                     });
                 });
 
-                $($(".card")[0]).children(".Carousel").css({ "opacity": "1"});
+                $($(".card")[0]).children(".Carousel").css({"opacity": "1"}).removeClass("Out");
             });
             /*left: 60px;*/
         </script>
