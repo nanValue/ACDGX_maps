@@ -143,8 +143,18 @@
                     max-height: 20px;
                 }
             }
+            
+            .lager_card {
 
-            .card {
+                position: relative;
+
+                width: 100%;
+                height: 100vh;
+
+                pointer-events: painted;
+            }
+
+            .card, .card_noSlide {
 
                 position: relative;
 
@@ -189,7 +199,6 @@
                     right: 60px;
                     opacity: 1;
                 }
-
 
                 &:nth-of-type(2n) .Carousel.Out {
 
@@ -313,6 +322,25 @@
                         text-overflow: clip;
                         font-family: 'Roboto'; /*, 'Poppins', 'GenJyuuGothicPX'*/
                     }
+
+                    pre {
+
+                        &::-webkit-scrollbar-thumb {
+
+                            background: rgb(209, 181, 211);
+                        }
+
+                        &::-webkit-scrollbar-track {
+
+                            background: rgb(0, 0, 0);
+                        }
+
+                        &::-webkit-scrollbar {
+
+                            max-width: 20px;
+                            max-height: 20px;
+                        }
+                    }
                 }
             }
 
@@ -329,7 +357,7 @@
                 flex-direction: column;
             }
 
-            .Carousel {
+            .Carousel, .lager_Carousel {
 
                 text-align: center;
                 align-content: center;
@@ -340,16 +368,73 @@
                 -o-user-select: none;
                 -ms-user-select: none;
 
-                color: #fff;
                 text-align: center;
-                background: rgb(43, 43, 43);
-                background-image: url("https://iili.io/FkXkCAP.png");
                 border-radius: 6px;
 
                 position: relative;
                 overflow: hidden;
 
                 box-sizing: border-box;
+            }
+
+            .lager_Carousel div.lager_Carousel_cont {
+
+                display: flex;
+
+                flex-wrap: wrap;
+                flex-direction: column;
+
+                overflow: scroll hidden;
+
+                width: 100%;
+                height: 100%;
+
+                scroll-snap-type: x mandatory;
+
+                justify-content: center;
+
+                &::-webkit-scrollbar-thumb {
+
+                    background: rgb(209, 181, 211);
+                    border-radius: 6px;
+                }
+
+                &::-webkit-scrollbar-track {
+
+                    background: rgba(0, 0, 0, 1);
+                    border-radius: 6px;
+                }
+
+                &::-webkit-scrollbar {
+
+                    max-width: 20px;
+                    max-height: 20px;
+                }
+
+                .card, .card_noSlide{
+
+                    scroll-snap-align: center;
+                    scroll-behavior: smooth;
+
+                    &:nth-of-type(2n) .text_content {
+
+                        right: 60px;
+
+                        h1, span, pre {text-align: right;}
+                    }
+
+                    &:nth-of-type(2n + 1) .text_content {
+
+                        left: 60px;
+
+                        h1, span, pre {text-align: left;}
+                    }
+                }
+            }
+
+            .Carousel {
+
+                background-image: url("https://iili.io/FkXkCAP.png");
 
                 &:hover {
 
@@ -409,6 +494,15 @@
                         max-height: 12px;
                     }
 
+                    .lager_cardcell {
+
+                        width: 100%;
+                        height: 100%;
+
+                        scroll-snap-align: center;
+                        scroll-behavior: smooth;
+                    }
+
                     .cardcell {
 
                         width: 100%;
@@ -439,7 +533,7 @@
 
             @media (max-width: 720px) {
 
-                .card .text_content {
+                .card .text_content, .card_noSlide .text_content{
 
                     h1 {
 
@@ -456,7 +550,7 @@
 
             @media (max-width: 720px) {
 
-                .card {
+                .card, .card_noSlide {
 
                     .text_content:nth-of-type(2n), .text_content {
 
@@ -569,70 +663,71 @@
                 </div>
             </nav>
 
-            <!--div class="Carousel" tabindex="1" style="opacity: 1;">
-                <div class="Carousel_cont">
-                    <div class="card cardcell">
-                        <div class="image_back" style="background-image: url('https://iili.io/FvCL4MN.jpg');"></div>
-                            <div class="Carousel" tabindex="1" style="opacity: 1;">
-                                <div class="Carousel_cont">
-                                    <img class="image_main cardcell" src="https://iili.io/FvCL4MN.jpg" alt="view" style="height: calc(var(--carousel-width) * 3 / 5);">
-                                    <img class="image_main cardcell" src="https://iili.io/FvCLOcF.jpg" alt="view" style="height: calc(var(--carousel-width) * 3 / 5);">
-                                    <img class="image_main cardcell" src="https://iili.io/FvCLj6P.jpg" alt="view" style="height: calc(var(--carousel-width) * 3 / 5);">
-                                    <img class="image_main cardcell" src="https://iili.io/FvCLhMB.jpg" alt="view" style="height: calc(var(--carousel-width) * 3 / 5);">
-                                    <img class="image_main cardcell" src="https://iili.io/FvCLXnV.jpg" alt="view" style="height: calc(var(--carousel-width) * 3 / 5);">
-                                    <img class="image_main cardcell" src="https://iili.io/FvCLv9a.jpg" alt="view" style="height: calc(var(--carousel-width) * 3 / 5);">
-                                    <img class="image_main cardcell" src="https://iili.io/FvCL8AJ.jpg" alt="view" style="height: calc(var(--carousel-width) * 3 / 5);">
-                                    <img class="image_main cardcell" src="https://iili.io/FvCLSwv.jpg" alt="view" style="height: calc(var(--carousel-width) * 3 / 5);">
-                                    <img class="image_main cardcell" src="https://iili.io/FvCLUtR.jpg" alt="view" style="height: calc(var(--carousel-width) * 3 / 5);">
-                                </div>
+            <div class="lager_Carousel lager_card" style="opacity: 1;">
+                <div class="lager_Carousel_cont" style="background-image: url('https://iili.io/FvROuEP.jpg');">
+                    <div class="card lager_cardcell">
+                        <div class="image_back" style="background: rgba(25, 25, 55, 0.8);"></div>
+                        <div class="Carousel" tabindex="1" style="opacity: 1;">
+                            <div class="Carousel_cont">
+                                <img class="image_main cardcell" src="https://iili.io/FvRkaXR.jpg" alt="view" style="height: calc(var(--carousel-width) * 4 / 5);">
+                                <img class="image_main cardcell" src="https://iili.io/FvRkRea.jpg" alt="view" style="height: calc(var(--carousel-width) * 4 / 5);">
+                                <img class="image_main cardcell" src="https://iili.io/FvRkYzv.jpg" alt="view" style="height: calc(var(--carousel-width) * 4 / 5);">
+                                <img class="image_main cardcell" src="https://iili.io/FvRk5mJ.jpg" alt="view" style="height: calc(var(--carousel-width) * 4 / 5);">
+                                <img class="image_main cardcell" src="https://iili.io/FvRk11I.jpg" alt="view" style="height: calc(var(--carousel-width) * 4 / 5);">
                             </div>
+                        </div>
                         <div class="text_content">
                             
-                            <h1 class="emfont-MantouSans">《守創者:建築》Creator守創者總部2025版</h1>
+                            <h1 class="emfont-MantouSans">《Aurora創世曙光》劇情宇宙 - 黑天使：回憶與入侵-上下篇（上篇）</h1>
                             <pre class="emfont-GenJyuuGothicPX">
-                        Creator守創者:
+    Black Angel
 
-                        是一個以創作為活動的團體,前身為C蓋者在 CSO Studio 行之有年,團員各有專長建築/設計/劇情/Lua,致力打造一個充滿美感的環境,也致內於反對侵犯智慧財產的人。
+    作者：𝔸ℂ𝔻𝔾𝕏◈創世曙光 成員們
 
-                        詳細說明會在地圖中書本裡說明,地圖及Lua會隨時更新
+    Create守創者 & Eternal乂l天城會l
 
-                        祝您參觀愉快。
+    負責人：SnakeEye艾倫
+
+    ------------------------------（地圖簡介）
+
+    時間2035年事情描述一個普通大學生"玄士"與隱瞞自己擁有超能力的心上人"潔恩"，訴說著兩人各自的經歷與他們一起共度的時光，正當日子走向好的發展時，他們卻不知道一個"金字塔"的邪惡組織潛伏在暗中找尋潔恩的"真面貌"，"天城會"與"幽靈"介入此事件，兩人的故事將會是打開創世曙光劇情宇宙的關鍵。
                             </pre>
                         </div>
                     </div>
 
-                    <div class="card cardcell">
-                        <div class="image_back" style="background-image: url('https://iili.io/FvCL4MN.jpg');"></div>
-                            <div class="Carousel" tabindex="1" style="opacity: 1;">
-                                <div class="Carousel_cont">
-                                    <img class="image_main cardcell" src="https://iili.io/FvCL4MN.jpg" alt="view" style="height: calc(var(--carousel-width) * 3 / 5);">
-                                    <img class="image_main cardcell" src="https://iili.io/FvCLOcF.jpg" alt="view" style="height: calc(var(--carousel-width) * 3 / 5);">
-                                    <img class="image_main cardcell" src="https://iili.io/FvCLj6P.jpg" alt="view" style="height: calc(var(--carousel-width) * 3 / 5);">
-                                    <img class="image_main cardcell" src="https://iili.io/FvCLhMB.jpg" alt="view" style="height: calc(var(--carousel-width) * 3 / 5);">
-                                    <img class="image_main cardcell" src="https://iili.io/FvCLXnV.jpg" alt="view" style="height: calc(var(--carousel-width) * 3 / 5);">
-                                    <img class="image_main cardcell" src="https://iili.io/FvCLv9a.jpg" alt="view" style="height: calc(var(--carousel-width) * 3 / 5);">
-                                    <img class="image_main cardcell" src="https://iili.io/FvCL8AJ.jpg" alt="view" style="height: calc(var(--carousel-width) * 3 / 5);">
-                                    <img class="image_main cardcell" src="https://iili.io/FvCLSwv.jpg" alt="view" style="height: calc(var(--carousel-width) * 3 / 5);">
-                                    <img class="image_main cardcell" src="https://iili.io/FvCLUtR.jpg" alt="view" style="height: calc(var(--carousel-width) * 3 / 5);">
-                                </div>
+                    <div class="card_noSlide lager_cardcell">
+                        <div class="image_back" style="background: rgb(25 ,25 ,55,0.8);"></div>
+                        <div class="Carousel" tabindex="1" style="opacity: 1;">
+                            <div class="Carousel_cont">
+                                <img class="image_main cardcell" src="https://iili.io/FvRSdgI.jpg" alt="view" style="height: calc(var(--carousel-width) * 4 / 5);">
+                                <img class="image_main cardcell" src="https://iili.io/FvRSF5X.jpg" alt="view" style="height: calc(var(--carousel-width) * 4 / 5);">
+                                <img class="image_main cardcell" src="https://iili.io/FvRS3Jt.jpg" alt="view" style="height: calc(var(--carousel-width) * 4 / 5);">
+                                <img class="image_main cardcell" src="https://iili.io/FvRSKen.jpg" alt="view" style="height: calc(var(--carousel-width) * 4 / 5);">
+                                <img class="image_main cardcell" src="https://iili.io/FvRSBzG.jpg" alt="view" style="height: calc(var(--carousel-width) * 4 / 5);">
+                                <img class="image_main cardcell" src="https://iili.io/FvRSxql.jpg" alt="view" style="height: calc(var(--carousel-width) * 4 / 5);">
                             </div>
+                        </div>
                         <div class="text_content">
                             
-                            <h1 class="emfont-MantouSans">《守創者:建築》Creator守創者總部2025版</h1>
+                            <h1 class="emfont-MantouSans">圖名：黑天使：回憶與入侵-上下篇（下篇）</h1>
                             <pre class="emfont-GenJyuuGothicPX">
-                        Creator守創者:
+    Black Angel
 
-                        是一個以創作為活動的團體,前身為C蓋者在 CSO Studio 行之有年,團員各有專長建築/設計/劇情/Lua,致力打造一個充滿美感的環境,也致內於反對侵犯智慧財產的人。
+    作者：𝔸ℂ𝔻𝔾𝕏◈創世曙光 成員們
 
-                        詳細說明會在地圖中書本裡說明,地圖及Lua會隨時更新
+    Create守創者 & Eternal乂l天城會l
 
-                        祝您參觀愉快。
+    負責人：SnakeEye艾倫
+
+    ------------------------------（地圖簡介）
+
+    時間2035年事情描述一個普通大學生"玄士"與隱瞞自己擁有超能力的心上人"潔恩"，訴說著兩人各自的經歷與他們一起共度的時光，正當日子走向好的發展時，他們卻不知道一個"金字塔"的邪惡組織潛伏在暗中找尋潔恩的"真面貌"，"天城會"與"幽靈"介入此事件，兩人的故事將會是打開創世曙光劇情宇宙的關鍵。
                             </pre>
                         </div>
                     </div>
                 </div>
             </div>
-        </div-->
+        </div>
 
         <script>
 
