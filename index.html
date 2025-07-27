@@ -30,11 +30,6 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
-        <script type="module">
-            import "https://font.emtech.cc/emfont.js";
-            emfont.init();
-        </script>
-
         <style>
 
             @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
@@ -569,88 +564,132 @@
                     <div><img src="https://iili.io/FYeMvLu.png" style = "animation: Rotate 12s ease-in-out infinite;"> <a href = "https://nanvalue.github.io/ACDGX/" target="_blank"> ACDGX創世曙光 </a><span>-團隊地圖</span></div>
                 </div>
             </nav>
+        </div>
 
-            <div class = "card">
+        <script>
 
-                <div class = "image_back" style = "background-image: url('https://iili.io/FeOefjf.jpg');"></div>
+            let root = document.documentElement;
+            let i = 0;
 
-                <div class = "Carousel Out"> 
-                    <div class = "Carousel_cont">
-                        <img class = "image_main cardcell" src = "https://iili.io/FeOefjf.jpg" style = "height: calc(var(--carousel-width) * 4 / 5);"/>
-                        <img class = "image_main cardcell" src = "https://iili.io/FeOWo5x.jpg" style = "height: calc(var(--carousel-width) * 4 / 5);"/>
-                        <img class = "image_main cardcell" src = "https://iili.io/FeOWnJj.jpg" style = "height: calc(var(--carousel-width) * 4 / 5);"/>
-                        <img class = "image_main cardcell" src = "https://iili.io/FeOW3W7.jpg" style = "height: calc(var(--carousel-width) * 4 / 5);"/>
-                        <img class = "image_main cardcell" src = "https://iili.io/FeOWxOQ.jpg" style = "height: calc(var(--carousel-width) * 4 / 5);"/>
-                        <img class = "image_main cardcell" src = "https://iili.io/FeOWTzB.jpg" style = "height: calc(var(--carousel-width) * 4 / 5);"/>
-                        <img class = "image_main cardcell" src = "https://iili.io/FeOWAs1.jpg" style = "height: calc(var(--carousel-width) * 4 / 5);"/>
-                        <img class = "image_main cardcell" src = "https://iili.io/FeOW70g.jpg" style = "height: calc(var(--carousel-width) * 4 / 5);"/>
-                        <img class = "image_main cardcell" src = "https://iili.io/FeOWcdJ.jpg" style = "height: calc(var(--carousel-width) * 4 / 5);"/>
-                        <img class = "image_main cardcell" src = "https://iili.io/FeOWl5v.jpg" style = "height: calc(var(--carousel-width) * 4 / 5);"/>
-                    </div>
-                </div>
+            let Carousel_animation_finish  = [true];
+            let Carousel_Data = [
+                {
+                    image_back : 'https://iili.io/FvCL4MN.jpg', 
+                    image_mains: [
+                        {src : "https://iili.io/FvCL4MN.jpg", style_height : "calc(var(--carousel-width) * 3 / 5)"},
+                        {src : "https://iili.io/FvCLOcF.jpg", style_height : "calc(var(--carousel-width) * 3 / 5)"},
+                        {src : "https://iili.io/FvCLj6P.jpg", style_height : "calc(var(--carousel-width) * 3 / 5)"},
+                        {src : "https://iili.io/FvCLhMB.jpg", style_height : "calc(var(--carousel-width) * 3 / 5)"},
+                        {src : "https://iili.io/FvCLXnV.jpg", style_height : "calc(var(--carousel-width) * 3 / 5)"},
+                        {src : "https://iili.io/FvCLv9a.jpg", style_height : "calc(var(--carousel-width) * 3 / 5)"},
+                        {src : "https://iili.io/FvCL8AJ.jpg", style_height : "calc(var(--carousel-width) * 3 / 5)"},
+                        {src : "https://iili.io/FvCLSwv.jpg", style_height : "calc(var(--carousel-width) * 3 / 5)"},
+                        {src : "https://iili.io/FvCLUtR.jpg", style_height : "calc(var(--carousel-width) * 3 / 5)"},
+                    ],
+                    title : "《守創者:建築》Creator守創者總部2025版",
+                    content : `
+    Creator守創者:
 
-                <div class = "text_content">
+    是一個以創作為活動的團體,前身為C蓋者在 CSO Studio 行之有年,團員各有專長建築/設計/劇情/Lua,致力打造一個充滿美感的環境,也致內於反對侵犯智慧財產的人。
 
-                    <h1> 戀愛物語 一 下雪後的約定 </h1>
-<pre>
+    詳細說明會在地圖中書本裡說明,地圖及Lua會隨時更新
 
+    祝您參觀愉快。
+                    `
+                },
+                {
+                    image_back : 'https://iili.io/FeOefjf.jpg', 
+                    image_mains: [
+                        {src : "https://iili.io/FeOefjf.jpg", style_height : "calc(var(--carousel-width) * 4 / 5)"},
+                        {src : "https://iili.io/FeOWo5x.jpg", style_height : "calc(var(--carousel-width) * 4 / 5)"},
+                        {src : "https://iili.io/FeOWnJj.jpg", style_height : "calc(var(--carousel-width) * 4 / 5)"},
+                        {src : "https://iili.io/FeOW3W7.jpg", style_height : "calc(var(--carousel-width) * 4 / 5)"},
+                        {src : "https://iili.io/FeOWxOQ.jpg", style_height : "calc(var(--carousel-width) * 4 / 5)"},
+                        {src : "https://iili.io/FeOWTzB.jpg", style_height : "calc(var(--carousel-width) * 4 / 5)"},
+                        {src : "https://iili.io/FeOWAs1.jpg", style_height : "calc(var(--carousel-width) * 4 / 5)"},
+                        {src : "https://iili.io/FeOW70g.jpg", style_height : "calc(var(--carousel-width) * 4 / 5)"},
+                        {src : "https://iili.io/FeOWcdJ.jpg", style_height : "calc(var(--carousel-width) * 4 / 5)"},
+                        {src : "https://iili.io/FeOWl5v.jpg", style_height : "calc(var(--carousel-width) * 4 / 5)"},
+                    ],
+                    title : "戀愛物語 一 下雪後的約定",
+                    content : `
     作者：卍一零之使魔一卍
 
     介紹內容大綱：
-    女主角[夏雪]，在學校上課中，那時有一位新的轉學生，男主角［李哲宇］，他在人生中發生很多痛苦、難過的事情，然而因為有了夏雪的支助下，讓他產生一股動力，並朝向正面的心態走下去，某天男主內心壓力太大想不開時，因為女主［夏雪］給他些支柱下，使男主心情穩定，男主對女主說，他的心願是想做出兩部動畫電影，目地是為了想達謝某些重要的恩人，因為女主叫［夏雪］，所以男主說自己成功做出動畫電影的話，想在那些年”下雪”時上映，正當男主和女主揮手道別後，此時男主在路途中不幸發生意外.....
-</pre>
-                </div>
-            </div>
-
-            <div class = "card">
-
-                <div class = "image_back" style = "background-image: url('https://iili.io/FhZkyrP.jpg');"></div>
-
-                <div class = "Carousel Out"> 
-                    <div class = "Carousel_cont">
-                        <img class = "image_main cardcell" src = "https://iili.io/FhZvBBp.jpg" style = "height: calc(var(--carousel-width) * 3 / 5);"/>
-                        <img class = "image_main cardcell" src = "https://iili.io/FhZkmBV.jpg" style = "height: calc(var(--carousel-width) * 3 / 5);"/>
-                        <img class = "image_main cardcell" src = "https://iili.io/FhZkDLQ.jpg" style = "height: calc(var(--carousel-width) * 3 / 5);"/>
-                    </div> 
-                </div>
-
-                <div class = "text_content">
-
-                    <h1> 【[重製版]技能成長】Skill Grow | Lua </h1>
-<pre>
-
+    女主角[夏雪]，在學校上課中，那時有一位新的轉學生，男主角［李哲宇］，他在人生中發生很多痛苦、難過的事情，然而因為有了夏雪的支助下，讓他產生一股動力，並朝向正面的心態走下去，某天男主內心壓力太大想不開時，因為女主［夏雪］給他些支柱下，使男主心情穩定，男主對女主說，他的心願是想做出兩部動畫電影，目地是為了想達謝某些重要的恩人，因為女主叫［夏雪］，所以男主說自己成功做出動畫電影的話，想在那些年”下雪”時上映，正當男主和女主揮手道別後，此時男主在路途中不幸發生意外..... `
+                },
+                {
+                    image_back : 'https://iili.io/FhZkyrP.jpg', 
+                    image_mains: [
+                        {src : "https://iili.io/FhZvBBp.jpg", style_height : "calc(var(--carousel-width) * 3 / 5)"},
+                        {src : "https://iili.io/FhZkmBV.jpg", style_height : "calc(var(--carousel-width) * 3 / 5)"},
+                        {src : "https://iili.io/FhZkDLQ.jpg", style_height : "calc(var(--carousel-width) * 3 / 5)"},
+                    ],
+                    title : "[重製版]技能成長】Skill Grow | Lua",
+                    content : `
     作者：DestroyerI滅世I（守創者）
 
     難度：[簡單] = [困難] ( 遊戲BUG ) 11回合 / [普通] 9回合 / [極限] 13回合 / [地獄] 9回合瘋狂版
 
-    介紹：競技型地圖，參考 Ain神的規律q 所製作的 技能成長 並加以改良，遊戲開始時會先進入60秒的地圖投票階段，玩家將投票選出 Counter-Strike 2 的 Dust2 炙熱沙城II、Italy 義大利、Inferno 煉獄小鎮 其中一張作為本局要遊玩的地圖，每回合開始可以獲得金幣購買技能並疊加，擊殺敵人也可以獲取金幣繼續疊加技能，善用各種技能組合打出最亮眼的成績。在瘋狂版中，玩家將獲得兩倍金幣，同時武器數值也會變得很誇張。
-</pre>
-                </div>
-            </div>
-
-            <div class = "card">
-
-                <div class = "image_back" style = "background-image: url('https://iili.io/Fh9zN7R.jpg');"></div>
-
-                <div class = "Carousel Out"> 
-                    <div class = "Carousel_cont"> 
-                        <img class = "image_main cardcell" src = "https://iili.io/Fh9zOep.jpg" style = "height: calc(var(--carousel-width) * 3 / 5);"/>
-                        <img class = "image_main cardcell" src = "https://iili.io/Fh9zemN.jpg" style = "height: calc(var(--carousel-width) * 3 / 5);"/>
-                    </div> 
-                </div>
-
-                <div class = "text_content">
-
-                    <h1> 新年鎮 </h1>
-<pre>
-
+    介紹：競技型地圖，參考 Ain神的規律q 所製作的 技能成長 並加以改良，遊戲開始時會先進入60秒的地圖投票階段，玩家將投票選出 Counter-Strike 2 的 Dust2 炙熱沙城II、Italy 義大利、Inferno 煉獄小鎮 其中一張作為本局要遊玩的地圖，每回合開始可以獲得金幣購買技能並疊加，擊殺敵人也可以獲取金幣繼續疊加技能，善用各種技能組合打出最亮眼的成績。在瘋狂版中，玩家將獲得兩倍金幣，同時武器數值也會變得很誇張。`
+                },
+                {
+                    image_back : 'https://iili.io/Fh9zN7R.jpg', 
+                    image_mains: [
+                        {src : "https://iili.io/Fh9zOep.jpg", style_height : "calc(var(--carousel-width) * 3 / 5)"},
+                        {src : "https://iili.io/Fh9zemN.jpg", style_height : "calc(var(--carousel-width) * 3 / 5)"},
+                    ],
+                    title : "新年鎮",
+                    content : `
     作者：緋櫻潯（守創者成員）
 
     地圖簡介：以新年、蛇年、神社為主題元素製成以及些許的小彩蛋
-</pre>
-                </div>
-            </div>
+                    `
+                },
+                {
+                    image_back : 'https://iili.io/FMZYY2R.jpg', 
+                    image_mains: [
+                        {src : "https://iili.io/FMTqqYu.jpg", style_height : "calc(var(--carousel-width) * 3 / 5)"},
+                        {src : "https://iili.io/Fjrc9Du.jpg", style_height : "calc(var(--carousel-width) * 4 / 5)"},
+                        {src : "https://iili.io/FjgsOHQ.jpg", style_height : "calc(var(--carousel-width))"}
+                    ],
+                    title : "魔幻菇菇博物館",
+                    content : `
+    CSO online RPG練等地圖：
 
+    -來自深淵島上最珍貴的物種"魔幻菇菇"帶來無盡的能量與財富，而你收到洛恩·克雷的邀約想獲取豐厚的報酬。
+
+    動態操作、舒適簡約的UI畫面，與腦動大開的冒險旅程，等你體驗！
+
+    CSO Studio搜尋：魔幻菇菇博物館
+
+    獲取詳細資訊：Discord社群連結 >
+                    `,
+                    add_link: "https://discord.com/invite/vaztCHwMWw"
+                },
+                {
+                    image_back : 'https://iili.io/FMZDbkX.jpg', 
+                    image_mains: [
+                        {src : "https://iili.io/FMZX55g.jpg", style_height : "calc(var(--carousel-width) * 3 / 5)"}
+                    ],
+                    title : "送客系列",
+                    content : `
+    娛樂派對地圖
+
+    -把使用槍枝把所有玩家推飛出去吧，尚Kㄟ(台語)！ 
+
+    目前有3代，其中1代為死鬥(限定武器)，2代為回合制，3代為死鬥(隨機武器)，
+
+    CSO Studio搜尋：送客
+                    `
+                },
+            ];
+
+            let Cards_content = $(".content");
+
+            $(document).ready(function(){
+
+                let xxx = `           
             <div class = "card">
 
                 <div class = "image_back" style = "background-image: url('https://iili.io/FMZYY2R.jpg');"></div>
@@ -679,117 +718,112 @@
     獲取詳細資訊：Discord社群連結 > <a href="https://discord.com/invite/vaztCHwMWw" target="_blank">https://discord.com/invite/vaztCHwMWw</a>
 </pre>
                 </div>
-            </div>
+            </div>`;
 
-            <div class = "card">
+                Carousel_Data.forEach((data) => {
 
-                <div class = "image_back" style = "background-image: url('https://iili.io/FMZDbkX.jpg');"></div>
+                    let Main_card = $("<div></div>").addClass("card");
 
-                <div class = "Carousel Out"> 
-                    <div class = "Carousel_cont"> 
-                        <img class = "image_main cardcell" src = "https://iili.io/FMZX55g.jpg" style = "height: calc(var(--carousel-width) * 3 / 5);"/>
-                    </div> 
-                </div>
+                    let Element_1 = $("<div></div>").addClass("image_back").css("background-image", "url(" + data.image_back + ")");
+                    let Element_2 = $("<div></div>").addClass("Carousel Out");
+                    let Carousel_content = $("<div></div>").addClass("Carousel_cont");
 
-                <div class = "text_content">
+                    data.image_mains.forEach((e) => {
 
-                    <h1> 送客系列 </h1>
-<pre> 
+                        let Card_cell = $("<img></img>").addClass("image_main cardcell").prop("src", e.src).prop("alt", "view");
 
-    娛樂派對地圖
+                        Carousel_content.append(Card_cell.css("height", e.style_height));
+                    });
 
-    -把使用槍枝把所有玩家推飛出去吧，尚Kㄟ(台語)！ 
+                    Element_2.append(Carousel_content);
 
-    目前有3代，其中1代為死鬥(限定武器)，2代為回合制，3代為死鬥(隨機武器)，
+                    let Element_3 = $("<div></div>").addClass("text_content").append($("<h1></h1>").text(data.title)).append($("<pre></pre>").text(data.content));
 
-    CSO Studio搜尋：送客
-</pre>
-                </div>
-            </div>
-        </div>
+                    if (data.add_link) {
 
-        <script>
-
-            let root = document.documentElement;
-            let i = 0;
-
-            document.querySelectorAll(".Carousel").forEach((element) => {
-
-                i += 1;
-
-                element.setAttribute("tabindex", i.toString());
-                /*element.setAttribute("hidefocus", true);
-                element.setAttribute("style", "outline: none;");*/
-            });
-
-            document.querySelectorAll("h1").forEach((element) => {
-
-                element.classList.add("emfont-MantouSans");
-            });
-
-            document.querySelectorAll("pre, span").forEach((element) => {
-
-                element.classList.add("emfont-GenJyuuGothicPX");
-            });
-
-            document.querySelectorAll(".Carousel_cont").forEach((element) => {
-
-                let target = null;
-
-                element.addEventListener("mousedown", (e) => {
-
-                    if (element.children.length === 1) {return;}
-
-                    this.cs = 0;
-
-                    this.ismousedown = true;
-
-                    this.crpos = {bar_left: element.scrollLeft, x: e.clientX}
-                    
-                    target = e.target;
-                    element.style.scrollSnapType = "none";
-                    target.parentNode.focus();
-
-                    //root.style.pointerEvents = "auto";
-
-                    e.preventDefault();
-                    e.stopPropagation();
-                }, false);
-
-                root.addEventListener("mouseup", (e) => {
- 
-                    if (element.children.length === 1) {return;}
-
-                    this.ismousedown = false;
-                    element.style.scrollSnapType = "x mandatory";
-                    target = null;
-                    //root.style.pointerEvents = "none";
-
-                    e.preventDefault();
-                    e.stopPropagation();
-                }, false);
-
-                element.addEventListener("mousemove", (e) => {
-                    
-                    let ci = 0.05;
-
-                    if (this.ismousedown === true) {
-
-                        ci = (this.cs++ <= 10) ? 0.4 : 0.05;
-
-                        element.scrollLeft -= (e.clientX - this.crpos.x)*ci;
-                        this.isc = true;
+                        Element_3.append($("<a></a>").text(data.add_link).prop("href", data.add_link).prop("target", "_blank"));
                     }
 
-                    e.preventDefault();
-                    e.stopPropagation();
-                }, false);
-            });
+                    Main_card.append(Element_1).append(Element_2).append(Element_3);
 
-            let Carousel_animation_finish  = [true];
+                    Cards_content.append(Main_card);
+                });
 
-            $(document).ready(function(){
+                //設定Carousel移動功能
+                document.querySelectorAll(".Carousel").forEach((element) => {
 
+                    i += 1;
+
+                    element.setAttribute("tabindex", i.toString());
+                    /*element.setAttribute("hidefocus", true);
+                    element.setAttribute("style", "outline: none;");*/
+                });
+
+                document.querySelectorAll("h1").forEach((element) => {
+
+                    element.classList.add("emfont-MantouSans");
+                });
+
+                document.querySelectorAll("pre, span").forEach((element) => {
+
+                    element.classList.add("emfont-GenJyuuGothicPX");
+                });
+
+                document.querySelectorAll(".Carousel_cont").forEach((element) => {
+
+                    let target = null;
+
+                    element.addEventListener("mousedown", (e) => {
+
+                        if (element.children.length === 1) {return;}
+
+                        this.cs = 0;
+
+                        this.ismousedown = true;
+
+                        this.crpos = {bar_left: element.scrollLeft, x: e.clientX}
+                        
+                        target = e.target;
+                        element.style.scrollSnapType = "none";
+                        target.parentNode.focus();
+
+                        //root.style.pointerEvents = "auto";
+
+                        e.preventDefault();
+                        e.stopPropagation();
+                    }, false);
+
+                    root.addEventListener("mouseup", (e) => {
+    
+                        if (element.children.length === 1) {return;}
+
+                        this.ismousedown = false;
+                        element.style.scrollSnapType = "x mandatory";
+                        target = null;
+                        //root.style.pointerEvents = "none";
+
+                        e.preventDefault();
+                        e.stopPropagation();
+                    }, false);
+
+                    element.addEventListener("mousemove", (e) => {
+                        
+                        let ci = 0.05;
+
+                        if (this.ismousedown === true) {
+
+                            ci = (this.cs++ <= 10) ? 0.4 : 0.05;
+
+                            element.scrollLeft -= (e.clientX - this.crpos.x)*ci;
+                            this.isc = true;
+                        }
+
+                        e.preventDefault();
+                        e.stopPropagation();
+                    }, false);
+                });
+
+                //設定Carousel動畫
                 $(".content").scroll(function() {
                     
                     let E = null;
@@ -814,8 +848,15 @@
                 });
 
                 $($(".card")[0]).children(".Carousel").css({"opacity": "1"}).removeClass("Out");
+
+
             });
             /*left: 60px;*/
+        </script>
+
+        <script type="module">
+            import "https://font.emtech.cc/emfont.js";
+            emfont.init();
         </script>
     </body>
 </html>
