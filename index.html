@@ -61,7 +61,7 @@
                 
                 position: relative;
                 height: 100%;
-                background-color: #222624;
+                background-color: black;
             }
 
             nav {
@@ -176,7 +176,7 @@
 
                 &:focus-within {
 
-                    background-image: linear-gradient(45deg, rgba(255,0,0,0.4), rgb(0,255,0,0.4), rgba(0,0,255,0.4));
+                    background-image: linear-gradient(45deg, rgba(255,0,0,0.2), rgb(0,255,0,0.2), rgba(0,0,255,0.3));
 
                     .text_content {
 
@@ -389,6 +389,22 @@
                 scroll-behavior: smooth;
             }
 
+            div.content > div.card:first-of-type {
+
+                .image_back {
+
+                    transition: opacity 0.6s ease-in-out;
+                    animation: unset;
+                    filter: unset;
+                    opacity: 1;
+                }
+
+                &:hover .image_back {
+
+                    opacity: 0;
+                }
+            }
+
             .lager_Carousel div.lager_Carousel_cont {
 
                 display: flex;
@@ -409,10 +425,21 @@
 
                     .image_back {
 
-                        background: rgba(25, 25, 25, 0.8);
-                        transition: background 0.6s ease-in-out;
+                        background: rgba(25, 25, 25, 0);
+                        transition: background 1.6s ease-in-out;
                         animation: unset;
                         filter: unset;
+                    }
+
+                    div.text_content pre, div.text_content h1{
+
+                        transition: color 1.6s ease-in-out, text-shadow 1.6s ease-in-out;
+                        color: black;
+                        text-shadow: rgb(20, 200, 200) -1px -1px 2px,
+                        rgb(80, 80, 80) 2px 2px 1px,
+                        rgb(160, 160, 160) 3px 3px 1px,
+                        rgb(220, 220, 220) 4px 4px 1px,
+                        white 5px 5px 3px;
                     }
                 }
 
@@ -423,6 +450,16 @@
                         .image_back {
 
                             background: rgba(0, 0, 0, 1);
+                        }
+
+                        div.text_content pre, div.text_content h1 {
+
+                            color: white;
+                            text-shadow: rgb(3, 18, 45) -1px -1px 2px,
+                            rgb(143, 142, 142) 2px 2px 1px,
+                            rgb(99, 99, 99) 3px 3px 1px,
+                            rgb(52, 52, 52) 4px 4px 1px,
+                            black 5px 5px 3px;
                         }
                     }
                 }
@@ -479,10 +516,19 @@
                     bottom: 10px;
                     right: 10px;
 
+                    transition: text-shadow 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
                     &:first-child {
                         
                         left: 10px;
                         right: unset;
+                    }
+
+                    &:hover {
+
+                        text-shadow: rgb(114, 226, 16) -1px -1px 12px,
+                        rgb(144, 205, 248) 2px 2px 10px,
+                        rgb(17, 20, 87) 3px 3px 10px
                     }
                 }
 
@@ -764,6 +810,103 @@
 
             let Carousel_animation_finish  = [true];
             let Carousel_Data = [
+                [
+                    {
+                        title: "《Aurora創世曙光》劇情宇宙",
+                        image_back: "https://iili.io/FvROuEP.jpg"
+                    },
+                    {
+                        image_mains: [
+                            {src : "https://iili.io/F8QGSb2.jpg"},
+                            {src : "https://iili.io/F8QG4s9.jpg"},
+                            {src : "https://iili.io/F8QGrW7.jpg"},
+                            {src : "https://iili.io/F8QGsUb.jpg"},
+                            {src : "https://iili.io/F8QGQJj.jpg"},
+                            {src : "https://iili.io/F8QGtOQ.jpg"},
+                            {src : "https://iili.io/F8QGgxS.jpg"},
+                        ],
+                        title : "創世隊長：塔瑞斯崛起",
+                        content : `
+    CAPTAIN CREATE
+
+    作者：𝔸ℂ𝔻𝔾𝕏◈創世曙光 成員們
+
+    Create守創者 & Eternal乂l天城會l
+
+    負責人：SnakeEye艾倫
+
+    --------------------（簡介）
+
+    正直二戰之後，主角伊凡面臨阿爾克柏合眾國最大的內患——塔瑞斯組織。
+    塔瑞斯原為阿爾克柏對外戰爭的扶植武裝部隊，其後被政府給背叛遺忘，其領導煙島晉對國家腐敗感到恨之入骨，藉此展開前所未有的陰謀。
+    在首都淪陷之際，伊凡與前線在星月特工局的秘密幫助下，成功對塔瑞斯造成重創，但他不知道的是——災難也即將來臨。
+    伊凡與神秘組織對抗塔瑞斯的序幕將掀開。`
+                    },
+                    {
+                        image_mains: [
+                            {src : "https://iili.io/FvRkaXR.jpg"},
+                            {src : "https://iili.io/FvRkRea.jpg"},
+                            {src : "https://iili.io/FvRkYzv.jpg"},
+                            {src : "https://iili.io/FvRk5mJ.jpg"},
+                            {src : "https://iili.io/FvRk11I.jpg"}
+                        ],
+                        title : "黑天使系列：回憶與入侵 - 上篇",
+                        content : `
+    Black Angel
+
+    作者：𝔸ℂ𝔻𝔾𝕏◈創世曙光 成員們
+
+    Create守創者 & Eternal乂l天城會l
+
+    負責人：SnakeEye艾倫
+
+    ------------------------------（地圖簡介）
+
+    時間2035年事情描述一個普通大學生"玄士"與隱瞞自己擁有超能力的心上人"潔恩"，訴說著兩人各自的經歷與他們一起共度的時光，正當日子走向好的發展時，他們卻不知道一個"金字塔"的邪惡組織潛伏在暗中找尋潔恩的"真面貌"，"天城會"與"幽靈"介入此事件，兩人的故事將會是打開創世曙光劇情宇宙的關鍵。 `
+                    },
+                    {
+                        image_mains: [
+                            {src : "https://iili.io/FvRSdgI.jpg"},
+                            {src : "https://iili.io/FvRSF5X.jpg"},
+                            {src : "https://iili.io/FvRS3Jt.jpg"},
+                            {src : "https://iili.io/FvRSKen.jpg"},
+                            {src : "https://iili.io/FvRSBzG.jpg"},
+                            {src : "https://iili.io/FvRSxql.jpg"}
+                        ],
+                        title : "黑天使系列：回憶與入侵 - 下篇",
+                        content : `
+    Black Angel
+
+    作者：𝔸ℂ𝔻𝔾𝕏◈創世曙光 成員們
+
+    Create守創者 & Eternal乂l天城會l
+
+    負責人：SnakeEye艾倫
+
+    ------------------------------（地圖簡介）
+
+    時間2035年事情描述一個普通大學生"玄士"與隱瞞自己擁有超能力的心上人"潔恩"，訴說著兩人各自的經歷與他們一起共度的時光，正當日子走向好的發展時，他們卻不知道一個"金字塔"的邪惡組織潛伏在暗中找尋潔恩的"真面貌"，"天城會"與"幽靈"介入此事件，兩人的故事將會是打開創世曙光劇情宇宙的關鍵。 `
+                    },
+                ],
+                {
+                    image_back : 'https://iili.io/F8LnjqX.jpg', 
+                    image_mains: [
+                        {src : "https://iili.io/F8Lna0g.jpg"},
+                        {src : "https://iili.io/F8Ln0dJ.jpg"},
+                        {src : "https://iili.io/F8Ln15v.jpg"},
+                        {src : "https://iili.io/F8LnYqF.jpg"},
+                        {src : "https://iili.io/F8LnGbp.jpg"},
+                        {src : "https://iili.io/F8LnXst.jpg"},
+                    ],
+                    title : "ZE〔|-II】 無限界域-瑪塔之骸-",
+                    content : `
+    作者：大腸明總統
+
+    地圖介紹：
+    機艙門關上了,但只能暫時阻擋那些變異體,
+
+    |卡洛|目前無法向哨站取得聯繫，就在這時 探測器顯示出附近存在小型黑洞，經過討論後決定前往黑洞的所在之處。`
+                },
                 {
                     image_back : 'https://iili.io/F84vaDl.jpg', 
                     image_mains: [
@@ -790,57 +933,6 @@
 
     2021/11/6 地圖重製`
                 },
-                [
-                    {
-                        title: "《Aurora創世曙光》劇情宇宙 - 黑天使",
-                        image_back: "https://iili.io/FvROuEP.jpg"
-                    },
-                    {
-                        image_mains: [
-                            {src : "https://iili.io/FvRkaXR.jpg"},
-                            {src : "https://iili.io/FvRkRea.jpg"},
-                            {src : "https://iili.io/FvRkYzv.jpg"},
-                            {src : "https://iili.io/FvRk5mJ.jpg"},
-                            {src : "https://iili.io/FvRk11I.jpg"}
-                        ],
-                        title : "回憶與入侵 - 上篇",
-                        content : `
-    Black Angel
-
-    作者：𝔸ℂ𝔻𝔾𝕏◈創世曙光 成員們
-
-    Create守創者 & Eternal乂l天城會l
-
-    負責人：SnakeEye艾倫
-
-    ------------------------------（地圖簡介）
-
-    時間2035年事情描述一個普通大學生"玄士"與隱瞞自己擁有超能力的心上人"潔恩"，訴說著兩人各自的經歷與他們一起共度的時光，正當日子走向好的發展時，他們卻不知道一個"金字塔"的邪惡組織潛伏在暗中找尋潔恩的"真面貌"，"天城會"與"幽靈"介入此事件，兩人的故事將會是打開創世曙光劇情宇宙的關鍵。 `
-                    },
-                    {
-                        image_mains: [
-                            {src : "https://iili.io/FvRSdgI.jpg"},
-                            {src : "https://iili.io/FvRSF5X.jpg"},
-                            {src : "https://iili.io/FvRS3Jt.jpg"},
-                            {src : "https://iili.io/FvRSKen.jpg"},
-                            {src : "https://iili.io/FvRSBzG.jpg"},
-                            {src : "https://iili.io/FvRSxql.jpg"}
-                        ],
-                        title : "回憶與入侵 - 下篇",
-                        content : `
-    Black Angel
-
-    作者：𝔸ℂ𝔻𝔾𝕏◈創世曙光 成員們
-
-    Create守創者 & Eternal乂l天城會l
-
-    負責人：SnakeEye艾倫
-
-    ------------------------------（地圖簡介）
-
-    時間2035年事情描述一個普通大學生"玄士"與隱瞞自己擁有超能力的心上人"潔恩"，訴說著兩人各自的經歷與他們一起共度的時光，正當日子走向好的發展時，他們卻不知道一個"金字塔"的邪惡組織潛伏在暗中找尋潔恩的"真面貌"，"天城會"與"幽靈"介入此事件，兩人的故事將會是打開創世曙光劇情宇宙的關鍵。 `
-                    },
-                ],
                 {
                     image_back : 'https://iili.io/FvCL4MN.jpg', 
                     image_mains: [
