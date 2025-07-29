@@ -34,6 +34,11 @@
 
             @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
+            @font-face {
+                font-family: "MantouSans";
+                src: url("./assets/fonts/MantouSansRegular.ttf");
+            }
+
             :root {
 
                 --main-backgorund-color: linear-gradient(310deg, #21e1d733 0%, #56b0c65b 33%,rgba(66, 52, 53, 0.376) 66%, #0909626f 100%);/*linear-gradient(310deg, #21e1d733 0%, #39b2755b 33%,rgba(66, 52, 53, 0.376) 66%, #0909626f 100%);*/
@@ -375,6 +380,9 @@
                 overflow: hidden;
 
                 box-sizing: border-box;
+
+                scroll-snap-align: center;
+                scroll-behavior: smooth;
             }
 
             .lager_Carousel div.lager_Carousel_cont {
@@ -393,6 +401,28 @@
 
                 justify-content: center;
 
+                .card, .card_noSlide {
+
+                    .image_back {
+
+                        background: rgba(25, 25, 25, 0.8);
+                        transition: background 0.6s ease-in-out;
+                        animation: unset;
+                        filter: unset;
+                    }
+                }
+
+                &:hover{
+
+                    .card, .card_noSlide {
+
+                        .image_back {
+
+                            background: rgba(0, 0, 0, 1);
+                        }
+                    }
+                }
+
                 &::-webkit-scrollbar-thumb {
 
                     background: rgb(209, 181, 211);
@@ -402,7 +432,6 @@
                 &::-webkit-scrollbar-track {
 
                     background: rgba(0, 0, 0, 1);
-                    border-radius: 6px;
                 }
 
                 &::-webkit-scrollbar {
@@ -429,6 +458,52 @@
 
                         h1, span, pre {text-align: left;}
                     }
+                }
+
+                button {
+
+                    position: absolute; 
+                    z-index: 5; 
+
+                    height: 80px; 
+                    background: rgb(0, 0, 0, 0); 
+                    border: none; 
+                    font-family: 'Roboto'; 
+                    color: white; 
+                    font-size: 60px; 
+
+                    bottom: 10px;
+                    right: 10px;
+
+                    &:first-child {
+                        
+                        left: 10px;
+                        right: unset;
+                    }
+                }
+
+                h2 {
+
+                    display: inline-block; 
+                    position: absolute;
+
+                    z-index: 5; 
+
+                    color: white; 
+                    
+                    height: 80px; 
+                    font-size: 30px; 
+                    bottom: 10px; 
+                    width: 100dvw; 
+
+                    text-align: center; 
+                    align-content: center; 
+                    
+                    text-shadow: rgb(3, 18, 45) -1px -1px 2px, 
+                                rgb(143, 142, 142) 2px 2px 1px, 
+                                rgb(99, 99, 99) 3px 3px 1px, 
+                                rgb(52, 52, 52) 4px 4px 1px, 
+                                black 5px 5px 3px;
                 }
             }
 
@@ -506,7 +581,7 @@
                     .cardcell {
 
                         width: 100%;
-                        height: 100%;
+                        /*height: 100%;*/
 
                         scroll-snap-align: center;
                         scroll-behavior: smooth;
@@ -550,7 +625,26 @@
 
             @media (max-width: 720px) {
 
-                .card, .card_noSlide {
+                .lager_Carousel div.lager_Carousel_cont {                     
+
+                    .card , .card_noSlide {
+
+                        &:nth-of-type(2n + 1) .text_content, &:nth-of-type(2n) .text_content {
+
+                            right: unset;
+                            left: unset;
+
+                            h1, span, pre {
+
+                                text-align: center;
+                            }
+                        }
+                    }
+
+                    h2 {font-size: 16px;}
+                }
+
+                .card, .card_noSlide, .lager_card {
 
                     .text_content:nth-of-type(2n), .text_content {
 
@@ -647,11 +741,6 @@
                 }
             }
         </style>
-
-        <script type="module">
-            import "https://font.emtech.cc/emfont.js";
-            /*emfont.init();*/
-        </script>
     </head>
 
     <body>
@@ -662,71 +751,6 @@
                     <div><img src="https://iili.io/FYeMvLu.png" style = "animation: Rotate 12s ease-in-out infinite;"> <a href = "https://nanvalue.github.io/ACDGX/" target="_blank"> ACDGX創世曙光 </a><span>-團隊地圖</span></div>
                 </div>
             </nav>
-
-            <div class="lager_Carousel lager_card" style="opacity: 1;">
-                <div class="lager_Carousel_cont" style="background-image: url('https://iili.io/FvROuEP.jpg');">
-                    <div class="card lager_cardcell">
-                        <div class="image_back" style="background: rgba(25, 25, 55, 0.8);"></div>
-                        <div class="Carousel" tabindex="1" style="opacity: 1;">
-                            <div class="Carousel_cont">
-                                <img class="image_main cardcell" src="https://iili.io/FvRkaXR.jpg" alt="view" style="height: calc(var(--carousel-width) * 4 / 5);">
-                                <img class="image_main cardcell" src="https://iili.io/FvRkRea.jpg" alt="view" style="height: calc(var(--carousel-width) * 4 / 5);">
-                                <img class="image_main cardcell" src="https://iili.io/FvRkYzv.jpg" alt="view" style="height: calc(var(--carousel-width) * 4 / 5);">
-                                <img class="image_main cardcell" src="https://iili.io/FvRk5mJ.jpg" alt="view" style="height: calc(var(--carousel-width) * 4 / 5);">
-                                <img class="image_main cardcell" src="https://iili.io/FvRk11I.jpg" alt="view" style="height: calc(var(--carousel-width) * 4 / 5);">
-                            </div>
-                        </div>
-                        <div class="text_content">
-                            
-                            <h1 class="emfont-MantouSans">《Aurora創世曙光》劇情宇宙 - 黑天使：回憶與入侵-上下篇（上篇）</h1>
-                            <pre class="emfont-GenJyuuGothicPX">
-    Black Angel
-
-    作者：𝔸ℂ𝔻𝔾𝕏◈創世曙光 成員們
-
-    Create守創者 & Eternal乂l天城會l
-
-    負責人：SnakeEye艾倫
-
-    ------------------------------（地圖簡介）
-
-    時間2035年事情描述一個普通大學生"玄士"與隱瞞自己擁有超能力的心上人"潔恩"，訴說著兩人各自的經歷與他們一起共度的時光，正當日子走向好的發展時，他們卻不知道一個"金字塔"的邪惡組織潛伏在暗中找尋潔恩的"真面貌"，"天城會"與"幽靈"介入此事件，兩人的故事將會是打開創世曙光劇情宇宙的關鍵。
-                            </pre>
-                        </div>
-                    </div>
-
-                    <div class="card_noSlide lager_cardcell">
-                        <div class="image_back" style="background: rgb(25 ,25 ,55,0.8);"></div>
-                        <div class="Carousel" tabindex="1" style="opacity: 1;">
-                            <div class="Carousel_cont">
-                                <img class="image_main cardcell" src="https://iili.io/FvRSdgI.jpg" alt="view" style="height: calc(var(--carousel-width) * 4 / 5);">
-                                <img class="image_main cardcell" src="https://iili.io/FvRSF5X.jpg" alt="view" style="height: calc(var(--carousel-width) * 4 / 5);">
-                                <img class="image_main cardcell" src="https://iili.io/FvRS3Jt.jpg" alt="view" style="height: calc(var(--carousel-width) * 4 / 5);">
-                                <img class="image_main cardcell" src="https://iili.io/FvRSKen.jpg" alt="view" style="height: calc(var(--carousel-width) * 4 / 5);">
-                                <img class="image_main cardcell" src="https://iili.io/FvRSBzG.jpg" alt="view" style="height: calc(var(--carousel-width) * 4 / 5);">
-                                <img class="image_main cardcell" src="https://iili.io/FvRSxql.jpg" alt="view" style="height: calc(var(--carousel-width) * 4 / 5);">
-                            </div>
-                        </div>
-                        <div class="text_content">
-                            
-                            <h1 class="emfont-MantouSans">圖名：黑天使：回憶與入侵-上下篇（下篇）</h1>
-                            <pre class="emfont-GenJyuuGothicPX">
-    Black Angel
-
-    作者：𝔸ℂ𝔻𝔾𝕏◈創世曙光 成員們
-
-    Create守創者 & Eternal乂l天城會l
-
-    負責人：SnakeEye艾倫
-
-    ------------------------------（地圖簡介）
-
-    時間2035年事情描述一個普通大學生"玄士"與隱瞞自己擁有超能力的心上人"潔恩"，訴說著兩人各自的經歷與他們一起共度的時光，正當日子走向好的發展時，他們卻不知道一個"金字塔"的邪惡組織潛伏在暗中找尋潔恩的"真面貌"，"天城會"與"幽靈"介入此事件，兩人的故事將會是打開創世曙光劇情宇宙的關鍵。
-                            </pre>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
 
         <script>
@@ -736,18 +760,69 @@
 
             let Carousel_animation_finish  = [true];
             let Carousel_Data = [
+                [
+                    {
+                        title: "《Aurora創世曙光》劇情宇宙 - 黑天使",
+                        image_back: "https://iili.io/FvROuEP.jpg"
+                    },
+                    {
+                        image_mains: [
+                            {src : "https://iili.io/FvRkaXR.jpg"},
+                            {src : "https://iili.io/FvRkRea.jpg"},
+                            {src : "https://iili.io/FvRkYzv.jpg"},
+                            {src : "https://iili.io/FvRk5mJ.jpg"},
+                            {src : "https://iili.io/FvRk11I.jpg"}
+                        ],
+                        title : "回憶與入侵 - 上篇",
+                        content : `
+    Black Angel
+
+    作者：𝔸ℂ𝔻𝔾𝕏◈創世曙光 成員們
+
+    Create守創者 & Eternal乂l天城會l
+
+    負責人：SnakeEye艾倫
+
+    ------------------------------（地圖簡介）
+
+    時間2035年事情描述一個普通大學生"玄士"與隱瞞自己擁有超能力的心上人"潔恩"，訴說著兩人各自的經歷與他們一起共度的時光，正當日子走向好的發展時，他們卻不知道一個"金字塔"的邪惡組織潛伏在暗中找尋潔恩的"真面貌"，"天城會"與"幽靈"介入此事件，兩人的故事將會是打開創世曙光劇情宇宙的關鍵。 `
+                    },
+                    {
+                        image_mains: [
+                            {src : "https://iili.io/FvRSdgI.jpg"},
+                            {src : "https://iili.io/FvRSF5X.jpg"},
+                            {src : "https://iili.io/FvRS3Jt.jpg"},
+                            {src : "https://iili.io/FvRSKen.jpg"},
+                            {src : "https://iili.io/FvRSBzG.jpg"},
+                            {src : "https://iili.io/FvRSxql.jpg"}
+                        ],
+                        title : "回憶與入侵 - 下篇",
+                        content : `
+    Black Angel
+
+    作者：𝔸ℂ𝔻𝔾𝕏◈創世曙光 成員們
+
+    Create守創者 & Eternal乂l天城會l
+
+    負責人：SnakeEye艾倫
+
+    ------------------------------（地圖簡介）
+
+    時間2035年事情描述一個普通大學生"玄士"與隱瞞自己擁有超能力的心上人"潔恩"，訴說著兩人各自的經歷與他們一起共度的時光，正當日子走向好的發展時，他們卻不知道一個"金字塔"的邪惡組織潛伏在暗中找尋潔恩的"真面貌"，"天城會"與"幽靈"介入此事件，兩人的故事將會是打開創世曙光劇情宇宙的關鍵。 `
+                    },
+                ],
                 {
                     image_back : 'https://iili.io/FvCL4MN.jpg', 
                     image_mains: [
-                        {src : "https://iili.io/FvCL4MN.jpg", style_height : "calc(var(--carousel-width) * 3 / 5)"},
-                        {src : "https://iili.io/FvCLOcF.jpg", style_height : "calc(var(--carousel-width) * 3 / 5)"},
-                        {src : "https://iili.io/FvCLj6P.jpg", style_height : "calc(var(--carousel-width) * 3 / 5)"},
-                        {src : "https://iili.io/FvCLhMB.jpg", style_height : "calc(var(--carousel-width) * 3 / 5)"},
-                        {src : "https://iili.io/FvCLXnV.jpg", style_height : "calc(var(--carousel-width) * 3 / 5)"},
-                        {src : "https://iili.io/FvCLv9a.jpg", style_height : "calc(var(--carousel-width) * 3 / 5)"},
-                        {src : "https://iili.io/FvCL8AJ.jpg", style_height : "calc(var(--carousel-width) * 3 / 5)"},
-                        {src : "https://iili.io/FvCLSwv.jpg", style_height : "calc(var(--carousel-width) * 3 / 5)"},
-                        {src : "https://iili.io/FvCLUtR.jpg", style_height : "calc(var(--carousel-width) * 3 / 5)"},
+                        {src : "https://iili.io/FvCL4MN.jpg"},
+                        {src : "https://iili.io/FvCLOcF.jpg"},
+                        {src : "https://iili.io/FvCLj6P.jpg"},
+                        {src : "https://iili.io/FvCLhMB.jpg"},
+                        {src : "https://iili.io/FvCLXnV.jpg"},
+                        {src : "https://iili.io/FvCLv9a.jpg"},
+                        {src : "https://iili.io/FvCL8AJ.jpg"},
+                        {src : "https://iili.io/FvCLSwv.jpg"},
+                        {src : "https://iili.io/FvCLUtR.jpg"},
                     ],
                     title : "《守創者:建築》Creator守創者總部2025版",
                     content : `
@@ -763,16 +838,16 @@
                 {
                     image_back : 'https://iili.io/FeOefjf.jpg', 
                     image_mains: [
-                        {src : "https://iili.io/FeOefjf.jpg", style_height : "calc(var(--carousel-width) * 4 / 5)"},
-                        {src : "https://iili.io/FeOWo5x.jpg", style_height : "calc(var(--carousel-width) * 4 / 5)"},
-                        {src : "https://iili.io/FeOWnJj.jpg", style_height : "calc(var(--carousel-width) * 4 / 5)"},
-                        {src : "https://iili.io/FeOW3W7.jpg", style_height : "calc(var(--carousel-width) * 4 / 5)"},
-                        {src : "https://iili.io/FeOWxOQ.jpg", style_height : "calc(var(--carousel-width) * 4 / 5)"},
-                        {src : "https://iili.io/FeOWTzB.jpg", style_height : "calc(var(--carousel-width) * 4 / 5)"},
-                        {src : "https://iili.io/FeOWAs1.jpg", style_height : "calc(var(--carousel-width) * 4 / 5)"},
-                        {src : "https://iili.io/FeOW70g.jpg", style_height : "calc(var(--carousel-width) * 4 / 5)"},
-                        {src : "https://iili.io/FeOWcdJ.jpg", style_height : "calc(var(--carousel-width) * 4 / 5)"},
-                        {src : "https://iili.io/FeOWl5v.jpg", style_height : "calc(var(--carousel-width) * 4 / 5)"},
+                        {src : "https://iili.io/FeOefjf.jpg"},
+                        {src : "https://iili.io/FeOWo5x.jpg"},
+                        {src : "https://iili.io/FeOWnJj.jpg"},
+                        {src : "https://iili.io/FeOW3W7.jpg"},
+                        {src : "https://iili.io/FeOWxOQ.jpg"},
+                        {src : "https://iili.io/FeOWTzB.jpg"},
+                        {src : "https://iili.io/FeOWAs1.jpg"},
+                        {src : "https://iili.io/FeOW70g.jpg"},
+                        {src : "https://iili.io/FeOWcdJ.jpg"},
+                        {src : "https://iili.io/FeOWl5v.jpg"},
                     ],
                     title : "戀愛物語 一 下雪後的約定",
                     content : `
@@ -784,9 +859,9 @@
                 {
                     image_back : 'https://iili.io/FhZkyrP.jpg', 
                     image_mains: [
-                        {src : "https://iili.io/FhZvBBp.jpg", style_height : "calc(var(--carousel-width) * 3 / 5)"},
-                        {src : "https://iili.io/FhZkmBV.jpg", style_height : "calc(var(--carousel-width) * 3 / 5)"},
-                        {src : "https://iili.io/FhZkDLQ.jpg", style_height : "calc(var(--carousel-width) * 3 / 5)"},
+                        {src : "https://iili.io/FhZvBBp.jpg"},
+                        {src : "https://iili.io/FhZkmBV.jpg"},
+                        {src : "https://iili.io/FhZkDLQ.jpg"},
                     ],
                     title : "[重製版]技能成長】Skill Grow | Lua",
                     content : `
@@ -799,8 +874,8 @@
                 {
                     image_back : 'https://iili.io/Fh9zN7R.jpg', 
                     image_mains: [
-                        {src : "https://iili.io/Fh9zOep.jpg", style_height : "calc(var(--carousel-width) * 3 / 5)"},
-                        {src : "https://iili.io/Fh9zemN.jpg", style_height : "calc(var(--carousel-width) * 3 / 5)"},
+                        {src : "https://iili.io/Fh9zOep.jpg"},
+                        {src : "https://iili.io/Fh9zemN.jpg"},
                     ],
                     title : "新年鎮",
                     content : `
@@ -812,8 +887,8 @@
                 {
                     image_back : 'https://iili.io/FMZYY2R.jpg', 
                     image_mains: [
-                        {src : "https://iili.io/FMTqqYu.jpg", style_height : "calc(var(--carousel-width) * 3 / 5)"},
-                        {src : "https://iili.io/Fjrc9Du.jpg", style_height : "calc(var(--carousel-width) * 4 / 5)"},
+                        {src : "https://iili.io/FMTqqYu.jpg"},
+                        {src : "https://iili.io/Fjrc9Du.jpg"},
                         {src : "https://iili.io/FjgsOHQ.jpg", style_height : "calc(var(--carousel-width))"}
                     ],
                     title : "魔幻菇菇博物館",
@@ -833,7 +908,7 @@
                 {
                     image_back : 'https://iili.io/FMZDbkX.jpg', 
                     image_mains: [
-                        {src : "https://iili.io/FMZX55g.jpg", style_height : "calc(var(--carousel-width) * 3 / 5)"}
+                        {src : "https://iili.io/FMZX55g.jpg"}
                     ],
                     title : "送客系列",
                     content : `
@@ -852,64 +927,92 @@
 
             $(document).ready(function(){
 
-                let xxx = `           
-            <div class = "card">
-
-                <div class = "image_back" style = "background-image: url('https://iili.io/FMZYY2R.jpg');"></div>
-
-                <div class = "Carousel Out"> 
-                    <div class = "Carousel_cont"> 
-                        <img class = "image_main cardcell" src = "https://iili.io/FMTqqYu.jpg" style = "height: calc(var(--carousel-width) * 3 / 5);"/>
-						<img class = "image_main cardcell" src = "https://iili.io/Fjrc9Du.jpg" style = "height: calc(var(--carousel-width) * 4 / 5);"/>
-						<img class = "image_main cardcell" src = "https://iili.io/FjgsOHQ.jpg" style = "height: calc(var(--carousel-width));"/>
-                    </div> 
-                </div>
-
-                <div class = "text_content">
-
-                    <h1> 魔幻菇菇博物館 </h1>
-<pre>
-
-    CSO online RPG練等地圖：
-
-    -來自深淵島上最珍貴的物種"魔幻菇菇"帶來無盡的能量與財富，而你收到洛恩·克雷的邀約想獲取豐厚的報酬。
-
-    動態操作、舒適簡約的UI畫面，與腦動大開的冒險旅程，等你體驗！
-
-    CSO Studio搜尋：魔幻菇菇博物館
-
-    獲取詳細資訊：Discord社群連結 > <a href="https://discord.com/invite/vaztCHwMWw" target="_blank">https://discord.com/invite/vaztCHwMWw</a>
-</pre>
-                </div>
-            </div>`;
-
                 Carousel_Data.forEach((data) => {
 
-                    let Main_card = $("<div></div>").addClass("card");
+                    if (Array.isArray(data)) {
 
-                    let Element_1 = $("<div></div>").addClass("image_back").css("background-image", "url(" + data.image_back + ")");
-                    let Element_2 = $("<div></div>").addClass("Carousel Out");
-                    let Carousel_content = $("<div></div>").addClass("Carousel_cont");
+                        let Element_Out = $("<div></div>").addClass("lager_Carousel lager_card");
 
-                    data.image_mains.forEach((e) => {
+                        let Button_right = $("<button></button>").text(">").css("z-index", 6);
+                        let Button_left = $("<button></button>").text("<").css("z-index", 6);
 
-                        let Card_cell = $("<img></img>").addClass("image_main cardcell").prop("src", e.src).prop("alt", "view");
+                        let Element_Out_cont = $("<div></div>").addClass("lager_Carousel_cont").css({"background-image": "url(" + data[0].image_back + ")", "background-size": "cover"}).append(Button_left).append(Button_right).append($("<h2></h2>").text(data[0].title));
 
-                        Carousel_content.append(Card_cell.css("height", e.style_height));
-                    });
+                        for (let i = 1; i < data.length; i++) {
 
-                    Element_2.append(Carousel_content);
+                            let Main_card = $("<div></div>").addClass(i > 1 ? "card_noSlide lager_cardcell" : "card lager_cardcell");
 
-                    let Element_3 = $("<div></div>").addClass("text_content").append($("<h1></h1>").text(data.title)).append($("<pre></pre>").text(data.content));
+                            let Element_1 = $("<div></div>").addClass("image_back");
+                            let Element_2 = $("<div></div>").addClass("Carousel").prop("tabindex", "1").css({"opacity": 1});
+                            let Carousel_content = $("<div></div>").addClass("Carousel_cont");
 
-                    if (data.add_link) {
+                            data[i].image_mains.forEach((e) => {
 
-                        Element_3.append($("<a></a>").text(data.add_link).prop("href", data.add_link).prop("target", "_blank"));
+                                let Card_cell = $("<img></img>").addClass("image_main cardcell").prop("src", e.src).prop("alt", "view");
+
+                                if (e.style_height) {Carousel_content.append(Card_cell.css("height", e.style_height));} else {Carousel_content.append(Card_cell);}
+                            });
+
+                            Element_2.append(Carousel_content);
+
+                            let Element_3 = $("<div></div>").addClass("text_content").append($("<h1></h1>").text(data[i].title)).append($("<pre></pre>").text(data[i].content));
+
+                            if (data[i].add_link) {
+
+                                Element_3.append($("<a></a>").text(data[i].add_link).prop("href", data[i].add_link).prop("target", "_blank"));
+                            }
+
+                            Main_card.append(Element_1).append(Element_2).append(Element_3);  
+                            Element_Out_cont.append(Main_card);                   
+                        }
+
+                        Button_right.click(() => {
+
+                            Element_Out_cont[0].scrollTo({
+                                top: 0,
+                                left: Math.min(Element_Out_cont.scrollLeft() + Element_Out_cont.innerWidth(), Element_Out_cont.innerWidth()*(data.length - 1)),
+                                behavior: "smooth",
+                            });
+                        });
+
+                        Button_left.click(() => {
+
+                            Element_Out_cont[0].scrollTo({
+                                top: 0,
+                                left: Math.max(Element_Out_cont.scrollLeft() - Element_Out_cont.innerWidth(), 0),
+                                behavior: "smooth",
+                            });
+                        });
+
+                        Cards_content.append(Element_Out.append(Element_Out_cont));
+                    } else {
+
+                        let Main_card = $("<div></div>").addClass("card");
+
+                        let Element_1 = $("<div></div>").addClass("image_back").css("background-image", "url(" + data.image_back + ")");
+                        let Element_2 = $("<div></div>").addClass("Carousel Out");
+                        let Carousel_content = $("<div></div>").addClass("Carousel_cont");
+
+                        data.image_mains.forEach((e) => {
+
+                            let Card_cell = $("<img></img>").addClass("image_main cardcell").prop("src", e.src).prop("alt", "view");
+
+                            if (e.style_height) {Carousel_content.append(Card_cell.css("height", e.style_height));} else {Carousel_content.append(Card_cell);}
+                        });
+
+                        Element_2.append(Carousel_content);
+
+                        let Element_3 = $("<div></div>").addClass("text_content").append($("<h1></h1>").text(data.title)).append($("<pre></pre>").text(data.content));
+
+                        if (data.add_link) {
+
+                            Element_3.append($("<a></a>").text(data.add_link).prop("href", data.add_link).prop("target", "_blank"));
+                        }
+
+                        Main_card.append(Element_1).append(Element_2).append(Element_3);
+
+                        Cards_content.append(Main_card);
                     }
-
-                    Main_card.append(Element_1).append(Element_2).append(Element_3);
-
-                    Cards_content.append(Main_card);
                 });
 
                 //設定Carousel移動功能
@@ -918,13 +1021,6 @@
                     i += 1;
 
                     element.setAttribute("tabindex", i.toString());
-                    /*element.setAttribute("hidefocus", true);
-                    element.setAttribute("style", "outline: none;");*/
-                });
-
-                document.querySelectorAll("h1").forEach((element) => {
-
-                    element.classList.add("emfont-MantouSans");
                 });
 
                 document.querySelectorAll("pre, span").forEach((element) => {
@@ -949,9 +1045,7 @@
                         target = e.target;
                         element.style.scrollSnapType = "none";
                         target.parentNode.focus();
-
                         //root.style.pointerEvents = "auto";
-
                         e.preventDefault();
                         e.stopPropagation();
                     }, false);
@@ -964,7 +1058,6 @@
                         element.style.scrollSnapType = "x mandatory";
                         target = null;
                         //root.style.pointerEvents = "none";
-
                         e.preventDefault();
                         e.stopPropagation();
                     }, false);
@@ -1011,11 +1104,7 @@
                 });
 
                 $($(".card")[0]).children(".Carousel").css({"opacity": "1"}).removeClass("Out");
-
-                emfont.init();
             });
-
-            /*left: 60px;*/
         </script>
     </body>
 </html>
