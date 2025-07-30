@@ -48,6 +48,7 @@
                 --main-backgorund-color: linear-gradient(310deg, #21e1d733 0%, #56b0c65b 33%,rgba(66, 52, 53, 0.376) 66%, #0909626f 100%);/*linear-gradient(310deg, #21e1d733 0%, #39b2755b 33%,rgba(66, 52, 53, 0.376) 66%, #0909626f 100%);*/
                 --nav-height: 50px;
                 --carousel-width: 30vw;
+                --scrollbar-thumb-color: rgb(209, 181, 211);
 
                 overflow: hidden;
             }
@@ -138,7 +139,7 @@
 
                 &::-webkit-scrollbar-thumb {
 
-                    background: rgb(209, 181, 211);
+                    background: var(--scrollbar-thumb-color);
                 }
 
                 &::-webkit-scrollbar-track {
@@ -336,7 +337,7 @@
 
                         &::-webkit-scrollbar-thumb {
 
-                            background: rgb(209, 181, 211);
+                            background: var(--scrollbar-thumb-color);
                         }
 
                         &::-webkit-scrollbar-track {
@@ -435,7 +436,7 @@
 
                         transition: color 1.6s ease-in-out, text-shadow 1.6s ease-in-out;
                         color: black;
-                        text-shadow: rgb(20, 200, 200) -1px -1px 2px,
+                        text-shadow: rgb(209, 181, 211) -1px -1px 2px,
                         rgb(80, 80, 80) 2px 2px 1px,
                         rgb(160, 160, 160) 3px 3px 1px,
                         rgb(220, 220, 220) 4px 4px 1px,
@@ -466,7 +467,7 @@
 
                 &::-webkit-scrollbar-thumb {
 
-                    background: rgb(209, 181, 211);
+                    background: var(--scrollbar-thumb-color);
                     border-radius: 6px;
                 }
 
@@ -603,7 +604,7 @@
 
                     &::-webkit-scrollbar-thumb {
 
-                        background: rgb(209, 181, 211);
+                        background: var(--scrollbar-thumb-color);
                         border-radius: 6px;
                     }
 
